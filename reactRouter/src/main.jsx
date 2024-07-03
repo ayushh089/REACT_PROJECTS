@@ -13,6 +13,7 @@ import About from "./components/About/About.jsx";
 import Contact from "./components/Contact/Contact.jsx";
 import User from "./components/User/User.jsx";
 import Github, { gitHubInfoLoader } from "./components/Github/Github.jsx";
+import NameState from "./context/nameState.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
         element: <User />,
       },
       {
-        loader:gitHubInfoLoader,
+        loader: gitHubInfoLoader,
         path: "github",
         element: <Github />,
       },
@@ -43,7 +44,9 @@ const router = createBrowserRouter([
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <>
+    <NameState>
+      <RouterProvider router={router} />
+    </NameState>
+  </>
 );
