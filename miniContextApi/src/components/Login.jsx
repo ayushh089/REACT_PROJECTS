@@ -4,7 +4,7 @@ import UserContext from "../context/UserContext";
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+const [expand,setExpand]=useState(false)
   const { setUser } = useContext(UserContext);
 
   const handleSubmit = (e) => {
@@ -12,7 +12,7 @@ function Login() {
     setUser({ username, password });
   };
   return (
-    <div className="bg-white round">
+    <div className="bg-white round ">
       <div className="bg-gray-400 rounded-3xl">
         <div>
           <h2>LogIn</h2>
