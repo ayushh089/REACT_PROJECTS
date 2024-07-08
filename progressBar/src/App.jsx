@@ -20,6 +20,7 @@ function App() {
   }, []);
   return (
     <>
+
       <span className="flex justify-center">Progress Bar</span>
       <ProgressBar value={value} />
     </>
