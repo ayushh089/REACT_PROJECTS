@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 function Home() {
     const navigate = useNavigate();
   return (
-    <div className="max-w-[1180px] h-screen  flex mx-auto items-center justify-center">
-      <img src="./images/dices.png" />
-      <div>
+    <div className="max-w-[1180px] h-screen  flex mx-auto items-center justify-center ml-auto">
+      <img src="./images/dices.jpg " className="h-80 w-auto mt-16" />
+      <div className="ml-24">
         <div className="text-8xl font-extrabold whitespace-nowrap ">
           DICE GAME
         </div>
