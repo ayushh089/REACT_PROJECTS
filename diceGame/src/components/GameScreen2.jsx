@@ -119,23 +119,25 @@ function GameScreen2() {
     <div className="">
       <div className="mt-10 ml-10 -100 mr-10 flex items-center md:justify-between  ">
         <div className="text-center max-w-[200px]">
-          <div className="md:text-8xl font-bold text-4xl">{coins}</div>
+          <div className="md:text-8xl font-bold text-4xl">${coins}</div>
           <p className="font-bold text-xl"> Total coins</p>
         </div>
-        <div className="flex gap-6 pr-20 ">
-          {numbers.map((number, index) => (
-            <div
-              key={index}
-              onClick={() => numberSelected(number)}
-              className={` w-16 h-16 ml-8 md:w-24 md:h-24 cursor-pointer outline font-bold text-2xl grid place-items-center transition ease-in-out hover:-translate-y-5 scale-110 delay-75  ${
-                numbers[betValue] === number
-                  ? "bg-indigo-200 -translate-y-1 scale-110 "
-                  : ""
-              }`}
-            >
-              {number}
-            </div>
-          ))}
+        <div>
+          <div className="flex gap-6 pr-20 ">
+            {numbers.map((number, index) => (
+              <div
+                key={index}
+                onClick={() => numberSelected(number)}
+                className={` w-16 h-16 ml-8 md:w-24 md:h-24 cursor-pointer outline-dashed font-bold text-2xl grid place-items-center transition ease-in-out hover:-translate-y-5 scale-110 delay-75  ${
+                  numbers[betValue] === number
+                    ? "bg-blue-300 -translate-y-1 scale-110 "
+                    : ""
+                }`}
+              >
+                {number}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       <div className="flex flex-col items-center mt-16">
@@ -162,7 +164,7 @@ function GameScreen2() {
             -
           </button>
           <p className="w-48 h-16 grid place-items-center text-3xl bg-blue-400 outline text-white font-extrabold rounded-md shadow-md">
-            {betAmount}
+            ${betAmount}
           </p>
           <button
             onClick={() => addBetAmount()}
